@@ -1,0 +1,338 @@
+/* Tarjeta minimalista para productos */
+.minimal-card {
+    border-radius: 16px;
+    transition: transform 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.minimal-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+.minimal-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.minimal-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.minimal-card .card-text {
+    color: #6c757d;
+}
+
+.minimal-card .text-success {
+    color: #28a745 !important;
+}
+
+/* Ajustar las imágenes de las tarjetas */
+.card-img-top {
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+}
+
+/* Asegurar que las tarjetas tengan el mismo tamaño */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+/* Espaciado entre las tarjetas */
+.row .col-md-4 {
+    margin-bottom: 20px;
+}
+
+/* Opcional: Estilo para el botón "Añadir Producto" */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important; /* Fondo translúcido */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo */
+    border-bottom: 2px solid #28a745; /* Línea verde en la parte inferior */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding-top: 0.2rem; /* Reduce el espacio superior */
+    padding-bottom: 0.1rem; /* Reduce el espacio inferior */
+    height: auto; /* Ajusta automáticamente la altura según el contenido */
+    border-bottom: none !important; /* Elimina la línea separadora */
+    box-shadow: none !important; /* Opcional: elimina cualquier sombra */
+}
+
+/* Estilo para los botones de la barra de navegación */
+.navbar-nav .nav-item {
+    border-right: none; /* Removed dividing lines */
+}
+
+.navbar-nav .nav-item:last-child {
+    border-right: none; /* Elimina la línea del último botón */
+}
+
+/* Estilo para los enlaces dentro de la barra de navegación */
+.navbar-nav .nav-link {
+    color: #66BB6A !important; /* Slightly darker and less pastel green */
+    font-weight: 500; /* Opcional: texto más grueso */
+} 
+
+.navbar-nav .nav-link:hover {
+    color: #FFFFFF !important; /* Change text to white */
+    background-color: #4CAF50; /* Darker green background fill */
+    box-shadow: 0 0 8px 2px rgba(76, 175, 80, 0.8); /* Adjusted green glow effect */
+    border-radius: 5px; /* Optional: rounded corners for the glow */
+}
+
+.navbar-brand img {
+    height: 80px; /* Ajusta la altura del logo */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.productos-fondo {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1rem;
+}
+
+.custom-carousel {
+    max-width: 900px;
+    margin: 32px auto 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.custom-carousel .carousel-inner,
+.custom-carousel .carousel-item,
+.custom-carousel .carousel-item img {
+    border-radius: 32px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.custom-carousel .carousel-caption {
+    background: rgba(34, 49, 63, 0.55);
+    border-radius: 18px;
+    padding: 12px 24px;
+}
+
+.perfil-container {
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-foto {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.perfil-tabla {
+    border: 2px solid #d4edda; /* Verde claro */
+}
+
+.perfil-tabla th, .perfil-tabla td {
+    text-align: center;
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    padding: 32px;
+}
+
+.cart-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cart-empty {
+    color: #888;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cart-empty-icon {
+    font-size: 2rem;
+}
+
+.cart-icon {
+    font-size: 2rem;
+    color: #28a745;
+}
+
+.cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-product {
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+}
+
+.cart-product:last-child {
+    border-bottom: none;
+}
+
+.cart-remove {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.cart-total {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.btn-checkout {
+    background: #28a745;
+    border: none;
+}
+
+.btn-checkout:hover {
+    background: #218838;
+}
+
+#notification-count,
+#cart-count {
+    top: 10% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 0.75rem !important;
+    padding: 0.2em 0.4em !important;
+}
+
+body {
+    background: linear-gradient(180deg,  #ffffff 0%, #e8f5e9 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    background: #fff;
+}
+
+.custom-carousel {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.minimal-card {
+    border-radius: 16px;
+    transition: transform 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.minimal-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+.productos-fondo {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1rem;
+}
+
+.section-divider {
+    border: none;
+    border-top: 2px solid #b2dfdb;
+    margin: 3rem 0 2rem 0;
+}
+
+.welcome-section {
+    background: linear-gradient(90deg, #e0f7fa 60%, #fff 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.welcome-icon {
+    font-size: 3.5rem;
+    color: #26a69a;
+    flex-shrink: 0;
+}
+
+.welcome-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #263238;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-desc {
+    font-size: 1.15rem;
+    color: #455a64;
+}
+
+footer {
+    background: #263238;
+    color: #fff;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+}
+
+/* Separador de categorías */
+.categoria-separator {
+    border-top: 1.5px dashed #b2dfdb;
+    margin: 2.5rem 0 2rem 0;
+}
+
+/* Animación de entrada para productos */
+.producto-animate {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    animation: productoFadeIn 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+@keyframes productoFadeIn {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Prioridad al hover sobre la animación */
+.producto-animate.minimal-card:hover {
+    opacity: 1 !important;
+    transform: translateY(-6px) scale(1.03) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
