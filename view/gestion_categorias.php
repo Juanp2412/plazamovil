@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/paths.php';
 // filepath: c:\xampp\htdocs\Plaza_Movil\view\gestion_categorias.php
 session_start();
 require_once '../controller/gestion_categorias.php';
@@ -26,7 +27,7 @@ $categorias = $model->obtenerCategorias();
     <title>Gestión de Categorías</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/Plaza-M-vil-3.1/css/styles.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/styles.css">
     
 </head>
 

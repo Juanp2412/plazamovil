@@ -33,7 +33,7 @@ if (isset($_SESSION['user_id_usuario'])) {
 ?>
 <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="/Plaza-M-vil-3.1/css/styles.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>-->
 
 <!-- Updated styles for buttons -->
@@ -44,8 +44,8 @@ if (isset($_SESSION['user_id_usuario'])) {
     <div class="container-fluid">
         <!-- Espacio para una imagen horizontal -->
 
-        <a class="navbar-brand" href="/Plaza-M-vil-3.1/index.php"> <!-- Redirige al index.php -->
-            <img src="/Plaza-M-vil-3.1/img/logohorizontal.png" alt="Logo" style="height: 40px;">
+        <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php"> <!-- Redirige al index.php -->
+            <img src="<?php echo BASE_URL; ?>/img/logohorizontal.png" alt="Logo" style="height: 40px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,12 +55,12 @@ if (isset($_SESSION['user_id_usuario'])) {
             <ul class="navbar-nav ms-auto">
                 <!-- Enlace de Inicio -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/Plaza-M-vil-3.1/index.php">Inicio</a> <!-- Redirige al index.php -->
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">Inicio</a> <!-- Redirige al index.php -->
                 </li>
 
                 <!-- Enlace de ¿Quienes Somos? -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Plaza-M-vil-3.1/view/quienes_somos.php">¿Quienes Somos?</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL; ?>/view/quienes_somos.php">¿Quienes Somos?</a>
                 </li>
 
                 <!-- ============================ -->
@@ -68,7 +68,7 @@ if (isset($_SESSION['user_id_usuario'])) {
                 <!-- ============================ -->
                 <?php if (isset($_SESSION['user_id_rol']) && $_SESSION['user_id_rol'] == 3): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Plaza-M-vil-3.1/view/historial_ventas.php">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>/view/historial_ventas.php">
                         <i class="bi bi-graph-up"></i> Mis Ventas
                     </a>
                 </li>
@@ -84,7 +84,7 @@ if (isset($_SESSION['user_id_usuario'])) {
                     <ul class="dropdown-menu">
                        // php foreach ($categorias as $cat): ?>
                             <li>
-                                <a class="dropdown-item" href="/Plaza-M-vil-3.1/index.php?id_categoria=php echo $cat['id_categoria']; ?>">
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>/index.php?id_categoria=php echo $cat['id_categoria']; ?>">
                                     php echo htmlspecialchars($cat['nombre']); ?>
                                 </a>
                             </li>
@@ -98,7 +98,7 @@ if (isset($_SESSION['user_id_usuario'])) {
                     <?php $id_rol = $_SESSION['user_id_rol']; ?>
                     <?php if ($id_rol === 1): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Plaza-M-vil-3.1/view/dashboard.php">Dashboard</a>
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>/view/dashboard.php">Dashboard</a>
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
@@ -126,7 +126,7 @@ if (isset($_SESSION['user_id_usuario'])) {
 
                 <!-- Botón Carrito de Compras -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/Plaza-M-vil-3.1/view/carritoview.php">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>/view/carritoview.php">
                         <i class="bi bi-cart3"></i>
                         <?php if ($totalProductos > 0): ?>
                             <span class="badge bg-danger rounded-pill"><?php echo $totalProductos; ?></span>
@@ -150,7 +150,7 @@ if (isset($_SESSION['user_id_usuario'])) {
                         ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/perfil.php">
+                        <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/perfil.php">
                             <i class="bi bi-person"></i> Mi Perfil
                         </a></li>
                         
@@ -158,17 +158,17 @@ if (isset($_SESSION['user_id_usuario'])) {
                         <!-- NUEVO: OPCIONES ESPECÍFICAS PARA AGRICULTOR EN EL DROPDOWN -->
                         <!-- ============================ -->
                         <?php if (isset($_SESSION['user_id_rol']) && $_SESSION['user_id_rol'] == 3): ?>
-                            <li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/mis_productos.php">
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/mis_productos.php">
                                 <i class="bi bi-basket"></i> Mis Productos
                             </a></li>
-                            <li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/historial_ventas.php">
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/historial_ventas.php">
                                 <i class="bi bi-graph-up"></i> Historial de Ventas
                             </a></li>
-                            <!---<li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/agregar_producto.php">
+                            <!---<li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/agregar_producto.php">
                                 <i class="bi bi-plus-circle"></i> Agregar Producto
                             </a></li>--->
                             <!-- NUEVO: Enlace para carga masiva -->
-                            <li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/carga_masiva.php">
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/carga_masiva.php">
                                 <i class="bi bi-upload"></i> Carga Masiva
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -177,14 +177,14 @@ if (isset($_SESSION['user_id_usuario'])) {
                         
                         <!-- OPCIONES PARA ADMINISTRADOR -->
                         <?php if (isset($_SESSION['user_id_rol']) && $_SESSION['user_id_rol'] == 1): ?>
-                            <li><a class="dropdown-item" href="/Plaza-M-vil-3.1/view/dashboard.php">
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/view/dashboard.php">
                                 <i class="bi bi-speedometer2"></i> Dashboard
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
                         <?php endif; ?>
                         
                         <li>
-                            <form action="/Plaza-M-vil-3.1/controller/logincontroller.php" method="POST" style="margin:0;">
+                            <form action="<?php echo BASE_URL; ?>/controller/logincontroller.php" method="POST" style="margin:0;">
                                 <input type="hidden" name="action" value="logout">
                                 <button type="submit" class="dropdown-item text-danger" style="width:100%;text-align:left;">
                                     <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
@@ -251,7 +251,7 @@ if (isset($_SESSION['user_id_usuario'])) {
 </div>
 
 <!-- Ventana flotante del chatbot (debe estar en el body, pero aquí para claridad) -->
-<link rel="stylesheet" href="/Plaza-M-vil-3.1/css/chatbot.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/chatbot.css">
 <div id="chatbot-container" class="chatbot-container" style="display:none;">
     <div class="chatbot-header" style="padding:10px; background:#198754; color:#fff; border-top-left-radius:10px; border-top-right-radius:10px; display:flex; justify-content:space-between; align-items:center;">
         <span><i class="bi bi-robot"></i> Chatbot</span>
@@ -268,7 +268,7 @@ if (isset($_SESSION['user_id_usuario'])) {
         </div>
     </div>
 </div>
-<script src="/Plaza-M-vil-3.1/controller/chatbot.js"></script>
+<script src="<?php echo BASE_URL; ?>/controller/chatbot.js"></script>
 <script>
     // Abrir chatbot al hacer click en el botón flotante
     document.getElementById("chatbot-float-btn").addEventListener("click", function() {
@@ -279,7 +279,7 @@ if (isset($_SESSION['user_id_usuario'])) {
 <!-- Modal PQRS -->
 <div class="modal fade" id="modalPQRS" tabindex="-1" aria-labelledby="modalPQRSLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form class="modal-content" method="POST" action="/Plaza-M-vil-3.1/controller/registrar_pqrs.php" enctype="multipart/form-data">
+    <form class="modal-content" method="POST" action="<?php echo BASE_URL; ?>/controller/registrar_pqrs.php" enctype="multipart/form-data">
       <div class="modal-header">
         <h5 class="modal-title" id="modalPQRSLabel">PQRS: Peticiones, Quejas, Reclamos y Sugerencias</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>

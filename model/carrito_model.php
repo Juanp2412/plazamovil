@@ -31,7 +31,7 @@ class CarritoModel {
             }
             session_unset();
             session_destroy();
-            header('Location: /Plaza-M-vil-3.1/view/login.php');
+            header('Location: ' . BASE_URL . '/view/login.php');
             exit;
         }
 

@@ -37,6 +37,10 @@ if (!$productos) {
 // Configurar MercadoPago
 MercadoPagoConfig::setAccessToken("APP_USR-2180958071478070-092210-ac4ee3a8d1cff42421efa9d6ddd087f1-2702024581"); // token real de pruebas/producción
 
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$callbackBase = $scheme . $host . BASE_URL . '/controller/confirmar_pago.php';
+
 $items = [];
 $total = 0;
 foreach ($productos as $prod) {
@@ -54,11 +58,11 @@ try {
     $preference = $client->create([
         "items" => $items,
         "back_urls" => [
-    "success" => "https://3db4fc79f134.ngrok-free.app/Plaza-M-vil-3.1/controller/confirmar_pago.php?status=success&payment_id={payment.id}&preference_id={preference.id}",
-    "failure" => "https://3db4fc79f134.ngrok-free.app/Plaza-M-vil-3.1/controller/confirmar_pago.php?status=failure&payment_id={payment.id}&preference_id={preference.id}",
-    "pending" => "https://3db4fc79f134.ngrok-free.app/Plaza-M-vil-3.1/controller/confirmar_pago.php?status=pending&payment_id={payment.id}&preference_id={preference.id}"
-],
-"auto_return" => "approved",
+        "success" => $callbackBase . "?status=success&payment_id={payment.id}&preference_id={preference.id}",
+        "failure" => $callbackBase . "?status=failure&payment_id={payment.id}&preference_id={preference.id}",
+        "pending" => $callbackBase . "?status=pending&payment_id={payment.id}&preference_id={preference.id}"
+    ],
+    "auto_return" => "approved",
     ]);
 } catch (\MercadoPago\Exceptions\MPApiException $e) {
     echo "<pre>";

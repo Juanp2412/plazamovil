@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/paths.php';
 // Cargar variables de entorno (opcional, si usas un archivo .env)
 
 $host = 'localhost';
