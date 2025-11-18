@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Cargar conexión a la base de datos ANTES de usar $pdo
 require_once __DIR__ . '/config/conexion.php';
+require_once __DIR__ . '/config/paths.php';
 
 // Verificar login (si esto debe estar aquí)
 $id_rol = $_SESSION['user_id_rol'] ?? null;
@@ -102,7 +103,7 @@ $categoriasFiltro = $pdo->query("SELECT id_categoria, nombre FROM categoria ORDE
     <title>Pagina Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/Plaza-M-vil-3.1/css/styles.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .producto-animate {
