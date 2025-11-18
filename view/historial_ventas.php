@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/paths.php';
 // Incluir el controlador al inicio del archivo
 require_once '../controller/historial_ventas_controller.php';
 ?>
@@ -11,7 +12,7 @@ require_once '../controller/historial_ventas_controller.php';
     <title>Pagina Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/Plaza-M-vil-3.1/css/styles.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/styles.css">
     <!-- Mover el script de Bootstrap al final del body -->
      
 </head>
@@ -205,7 +206,7 @@ require_once '../controller/historial_ventas_controller.php';
         <?php endif; ?>
         
         <div class="mt-3 text-center">
-            <a href="/Plaza-M-vil-3.1/index.php" class="btn btn-secondary">
+            <a href="<?php echo BASE_URL; ?>/index.php" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i> Volver al Inicio
             </a>
         </div>

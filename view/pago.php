@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/paths.php';
 session_start();
 require_once '../config/conexion.php';
 
@@ -58,7 +59,7 @@ foreach ($detalles as $d) {
     <title>Pago del Pedido #<?php echo $id_pedido; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/Plaza-M-vil-3.1/css/styles.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/styles.css">
     
 </head>
 
